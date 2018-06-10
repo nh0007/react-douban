@@ -102,13 +102,21 @@
   },
   "babel": {
     "presets": [
-      "react-app"
+      "react-app",
+      "es2015",
+      "stage-1"
+    ],
+    "plugins": [
+      "transform-decorators-legacy"
     ]
   },
   "prettier": {
     "singleQuote": true
   },
   "devDependencies": {
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
