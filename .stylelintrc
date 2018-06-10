@@ -1,0 +1,25 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": [
+          "global"
+        ]
+      }
+    ],
+    "selector-pseudo-element-no-unknown": [
+      true,
+      {
+        "ignorePseudoElements": [
+          "global"
+        ]
+      }
+    ],
+    "max-nesting-depth": 2
+  },
+  "ignoreFiles": [
+    "build/**/*.css"
+  ]
+}
