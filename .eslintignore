@@ -1,0 +1,7 @@
+/config/
+/scripts/
+/public/
+/build/
+/coverage/
+
+/src/utils/registerServiceWorker.js
