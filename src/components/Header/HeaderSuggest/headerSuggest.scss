@@ -1,0 +1,48 @@
+@import '../../../assets/styles/vars';
+
+.search-suggest {
+  background: #fff;
+  border: 1px solid #ddd;
+  margin-top: 8px;
+  position: absolute;
+  width: 356px;
+  z-index: 99;
+
+  li {
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+
+    &:hover {
+      background: #f9f9f9;
+    }
+  }
+}
+
+.search-link {
+  color: #999;
+  display: block;
+  overflow: hidden;
+  padding: 6px;
+  zoom: 1;
+}
+
+.search-image {
+  float: left;
+  height: 56px;
+  margin-right: 8px;
+  margin-top: 3px;
+  width: 40px;
+}
+
+.search-title {
+  color: $common-font-color;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+.search-author,
+.search-genres {
+  margin-top: 10px;
+}

@@ -1,0 +1,44 @@
+.search-content {
+  display: inline-block;
+}
+
+.search-form {
+  position: relative;
+  top: 9px;
+}
+
+.search-input {
+  background: #fff;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.16);
+  height: 30px;
+  padding-left: 10px;
+  width: 350px;
+}
+
+.search-submit {
+  background-position: 0 -40px;
+  background-repeat: no-repeat;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.16);
+  color: transparent;
+  cursor: pointer;
+  height: 32px;
+  margin: 1px 0 0 -4px;
+  vertical-align: middle;
+  width: 37px;
+}
+
+.book-search-icon {
+  background-image: url('../../../assets/images/book_search_btn.png');
+}
+
+.movie-search-icon {
+  background-image: url('../../../assets/images/movie_search_btn.png');
+}
+
+.music-search-icon {
+  background-image: url('../../../assets/images/music_search_btn.png');
+}
+
+.city-search-icon {
+  background-image: url('../../../assets/images/city_search_btn.png');
+}

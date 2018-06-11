@@ -17,7 +17,7 @@
         ]
       }
     ],
-    "max-nesting-depth": 2
+    "max-nesting-depth": 2,
   },
   "ignoreFiles": [
     "build/**/*.css"

@@ -1,0 +1,36 @@
+@import './vars';
+
+:global {
+  html {
+    font-size: 62.5%;
+  }
+
+  body {
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul,
+  ol,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  input,
+  button {
+    border: 0;
+    outline: none;
+  }
+}

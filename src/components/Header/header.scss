@@ -1,0 +1,37 @@
+.outer-header {
+  margin-bottom: 40px;
+  min-width: 936px;
+  transition: background 0.5s ease-in-out;
+}
+
+.inner-header {
+  margin: 0 auto;
+  padding: 10px 0 5px;
+  width: 936px;
+}
+
+.module-logo {
+  background-position: 0 12px;
+  background-repeat: no-repeat;
+  color: transparent;
+  display: inline-block;
+  height: 56px;
+  margin: 0 13px 0 0;
+  width: 145px;
+}
+
+.book-logo {
+  background-image: url('../../assets/images/book.png');
+}
+
+.movie-logo {
+  background-image: url('../../assets/images/movie.png');
+}
+
+.music-logo {
+  background-image: url('../../assets/images/music.png');
+}
+
+.city-logo {
+  background-image: url('../../assets/images/city.png');
+}
