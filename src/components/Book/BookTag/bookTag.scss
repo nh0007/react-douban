@@ -1,0 +1,9 @@
+@import '../../../assets/styles/mixin';
+
+.aside-content {
+  @include aside-content;
+}
+
+.aside-header {
+  @include aside-header;
+}

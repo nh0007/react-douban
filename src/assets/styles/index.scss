@@ -28,9 +28,26 @@
     text-decoration: none;
   }
 
+  li {
+    list-style: none;
+  }
+
   input,
   button {
+    background: none;
     border: 0;
+    margin: 0;
     outline: none;
+    padding: 0;
+  }
+
+  .book-tag-active {
+    background: $book-color;
+  }
+
+  .book-tag-hover {
+    &:hover {
+      background: $book-color;
+    }
   }
 }
