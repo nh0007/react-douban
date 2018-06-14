@@ -6,6 +6,12 @@
   white-space: nowrap;
 }
 
+@mixin common-header {
+  border-bottom: 1px solid #ddd;
+  color: #333;
+  padding-bottom: 5px;
+}
+
 @mixin aside-content {
   float: right;
   margin-bottom: 60px;
@@ -13,9 +19,7 @@
 }
 
 @mixin aside-header {
-  border-bottom: 1px solid #ddd;
-  color: #333;
-  padding-bottom: 5px;
+  @include common-header;
 }
 
 @mixin aside-item {
@@ -29,5 +33,26 @@
     padding: 10px 0 10px 3px;
     text-align: left;
     width: 100%;
+  }
+}
+
+@mixin main-content {
+  float: left;
+  margin-bottom: 60px;
+  padding-right: 40px;
+  width: 675px;
+}
+
+@mixin main-header {
+  @include common-header;
+}
+
+@mixin common-link {
+  color: $common-font-color;
+  cursor: pointer;
+
+  &:hover {
+    background: $common-font-color;
+    color: #fff;
   }
 }

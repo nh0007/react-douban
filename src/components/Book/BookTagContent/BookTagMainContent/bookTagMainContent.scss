@@ -1,0 +1,18 @@
+@import '../../../../assets/styles/mixin';
+
+.main-content {
+  @include main-content;
+}
+
+.main-header {
+  @include main-header;
+}
+
+.main-title {
+  display: inline-block;
+}
+
+.nav-link {
+  @include common-link;
+  margin-left: 15px;
+}

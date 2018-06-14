@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import PropTypes from 'prop-types';
+import BookTagMainContent from './BookTagMainContent';
 import BookTag from '../BookTag';
 
 @inject('bookStore')
@@ -29,6 +30,8 @@ export default class BookTagContent extends Component {
 
     return (
       <div>
+        <BookTagMainContent currentBookTag={currentBookTag} />
+
         <BookTag
           bookTags={bookTags}
           currentBookTags={currentBookTags}
