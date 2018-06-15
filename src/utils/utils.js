@@ -9,6 +9,16 @@ export function processedAuthor(value) {
   return value.join();
 }
 
+export function processedArray(array, length) {
+  const num = array.length;
+  const chunkedArray = [];
+  for (let i = 0, j = 0; i < num; i += length, j += 1) {
+    chunkedArray[j] = array.slice(i, i + length);
+  }
+  return chunkedArray;
+}
+
 export default {
-  processedAuthor
+  processedAuthor,
+  processedArray
 };
