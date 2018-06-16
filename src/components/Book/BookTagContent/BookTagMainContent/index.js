@@ -4,24 +4,15 @@ import PropTypes from 'prop-types';
 import { observable, action } from 'mobx';
 import { observer } from 'mobx-react';
 import CommonSlider from '../../../Common/CommonSlider';
-import { processedArray } from '../../../../utils/utils';
+import BookSliderList from './BookTagSliderList';
 import styles from './bookTagMainContent.scss';
 
 @observer
 export default class BookTagMainContent extends Component {
   static propTypes = {
     currentBookTag: PropTypes.string.isRequired,
-    currentTagBooks: PropTypes.arrayOf(PropTypes.object).isRequired
+    bookList: PropTypes.arrayOf(PropTypes.array).isRequired
   };
-
-  getBookList() {
-    const { currentTagBooks } = this.props;
-    let bookList = [];
-    if (currentTagBooks) {
-      bookList = processedArray(currentTagBooks, 10);
-    }
-    return bookList;
-  }
 
   @action
   setCurrentPage = page => {
@@ -37,21 +28,28 @@ export default class BookTagMainContent extends Component {
     }
   };
 
+  @action
+  setBookPrompt = (book, index) => {
+    this.bookPrompt = { book, index };
+  };
+
   pageCount = 0;
   @observable currentPage = 0;
   @observable currentDirection = 'left';
+  @observable bookPrompt = null;
 
   handleDotClick = page => {
-    this.setCurrentPage(page);
     if (page === this.currentPage) return;
     if (page < this.currentPage) {
       this.setCurrentDirection('left');
     } else {
       this.setCurrentDirection('right');
     }
+    this.setCurrentPage(page);
   };
 
   handleArrowClick = direction => {
+    this.setCurrentDirection(direction);
     let newPage = 0;
     if (direction === 'left') {
       newPage =
@@ -61,12 +59,10 @@ export default class BookTagMainContent extends Component {
         this.currentPage === this.pageCount - 1 ? 0 : this.currentPage + 1;
     }
     this.setCurrentPage(newPage);
-    this.setCurrentDirection(direction);
   };
 
   render() {
-    const { currentBookTag } = this.props;
-    const bookList = this.getBookList();
+    const { currentBookTag, bookList } = this.props;
     this.pageCount = bookList.length;
     return (
       <div className={styles['main-content']}>
@@ -85,6 +81,13 @@ export default class BookTagMainContent extends Component {
             />
           </div>
         </div>
+
+        <BookSliderList
+          currentPage={this.currentPage}
+          currentDirection={this.currentDirection}
+          bookList={bookList}
+          setBookPrompt={this.setBookPrompt}
+        />
       </div>
     );
   }

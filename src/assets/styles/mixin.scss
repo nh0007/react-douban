@@ -56,3 +56,17 @@
     color: #fff;
   }
 }
+
+@mixin common-title {
+  @include text-hidden;
+  font-weight: normal;
+
+  a {
+    color: $common-font-color;
+
+    &:hover {
+      background: $common-font-color;
+      color: #fff;
+    }
+  }
+}

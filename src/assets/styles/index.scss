@@ -50,4 +50,40 @@
       background: $book-color;
     }
   }
+
+  .slider-right-enter {
+    transform: translateX(100%);
+  }
+
+  .slider-right-enter-active {
+    transform: translateX(0%);
+    transition: transform 0.5s ease;
+  }
+
+  .slider-right-exit {
+    transform: translateX(0%);
+  }
+
+  .slider-right-exit-active {
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+  }
+
+  .slider-left-enter {
+    transform: translateX(-100%);
+  }
+
+  .slider-left-enter-active {
+    transform: translateX(0%);
+    transition: transform 0.5s ease;
+  }
+
+  .slider-left-exit {
+    transform: translateX(0%);
+  }
+
+  .slider-left-exit-active {
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+  }
 }

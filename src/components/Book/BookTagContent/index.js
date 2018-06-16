@@ -3,6 +3,7 @@ import { observer, inject, PropTypes as mobxPropTypes } from 'mobx-react';
 import PropTypes from 'prop-types';
 import BookTagMainContent from './BookTagMainContent';
 import BookTag from '../BookTag';
+import { processedArray } from '../../../utils/utils';
 
 @inject('bookStore')
 @observer
@@ -24,24 +25,33 @@ export default class BookTagContent extends Component {
     setTagBooks(currentBookTag);
   }
 
+  getBookList() {
+    const { tagBooks, currentBookTag } = this.props.bookStore;
+    const currentTagBooks = tagBooks.get(currentBookTag);
+    let bookList = [];
+    if (currentTagBooks) {
+      bookList = processedArray(currentTagBooks, 10);
+    }
+    return bookList;
+  }
+
   render() {
     const {
       bookTags,
       currentBookTags,
       currentBookTag,
-      tagBooks,
       setCurrentBookTags,
       setCurrentBookTag,
       setTagBooks
     } = this.props.bookStore;
-    const currentTagBooks = tagBooks.get(currentBookTag);
+    const bookList = this.getBookList();
 
     return (
       <div>
-        {currentTagBooks && (
+        {bookList.length !== 0 && (
           <BookTagMainContent
             currentBookTag={currentBookTag}
-            currentTagBooks={currentTagBooks}
+            bookList={bookList}
           />
         )}
 
