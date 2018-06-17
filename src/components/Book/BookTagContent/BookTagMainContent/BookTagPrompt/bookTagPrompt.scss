@@ -1,0 +1,45 @@
+.book-prompt {
+  background: #f9f9f7;
+  border: 1px solid #acacac;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px #fdfdfd inset, 0 1px 1px #dcdbd4;
+  box-sizing: border-box;
+  max-height: 220px;
+  padding: 10px;
+  position: absolute;
+  width: 330px;
+}
+
+.outside-triangle,
+.inside-triangle {
+  border-bottom: 8px solid transparent;
+  border-top: 8px solid transparent;
+  height: 0;
+  position: absolute;
+  top: 45%;
+  width: 0;
+}
+
+.outside-triangle {
+  border-right: 8px solid #acacac;
+  left: -8px;
+}
+
+.inside-triangle {
+  border-right: 8px solid #f9f9f9;
+  left: -7px;
+}
+
+.prompt-title {
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.prompt-introduce {
+  margin-bottom: 6px;
+}
+
+.prompt-summary {
+  line-height: 1.6;
+  max-height: 130px;
+}

@@ -5,13 +5,20 @@ import { observable, action } from 'mobx';
 import { observer } from 'mobx-react';
 import CommonSlider from '../../../Common/CommonSlider';
 import BookSliderList from './BookTagSliderList';
+import BookTagPrompt from './BookTagPrompt';
 import styles from './bookTagMainContent.scss';
 
 @observer
 export default class BookTagMainContent extends Component {
   static propTypes = {
     currentBookTag: PropTypes.string.isRequired,
-    bookList: PropTypes.arrayOf(PropTypes.array).isRequired
+    bookList: PropTypes.arrayOf(PropTypes.array).isRequired,
+    position: PropTypes.shape({
+      width: PropTypes.number,
+      height: PropTypes.number,
+      top: PropTypes.number,
+      left: PropTypes.number
+    }).isRequired
   };
 
   @action
@@ -62,12 +69,12 @@ export default class BookTagMainContent extends Component {
   };
 
   render() {
-    const { currentBookTag, bookList } = this.props;
+    const { currentBookTag, bookList, position } = this.props;
     this.pageCount = bookList.length;
     return (
-      <div className={styles['main-content']}>
-        <div className={styles['main-header']}>
-          <h2 className={styles['main-title']}>{currentBookTag}</h2>
+      <div>
+        <div className={styles['display-header']}>
+          <h2 className={styles['display-title']}>{currentBookTag}</h2>
           <NavLink to="book-tag-more-info" className={styles['nav-link']}>
             更多»
           </NavLink>
@@ -88,6 +95,10 @@ export default class BookTagMainContent extends Component {
           bookList={bookList}
           setBookPrompt={this.setBookPrompt}
         />
+        {this.bookPrompt &&
+          this.bookPrompt.book && (
+            <BookTagPrompt bookPrompt={this.bookPrompt} position={position} />
+          )}
       </div>
     );
   }

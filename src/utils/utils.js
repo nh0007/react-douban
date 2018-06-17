@@ -18,7 +18,18 @@ export function processedArray(array, length) {
   return chunkedArray;
 }
 
+export function getContentPosition(el) {
+  const rect = el.getBoundingClientRect();
+  return {
+    width: rect.width,
+    height: rect.height,
+    left: rect.left,
+    top: rect.top
+  };
+}
+
 export default {
   processedAuthor,
-  processedArray
+  processedArray,
+  getContentPosition
 };

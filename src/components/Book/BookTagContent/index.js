@@ -3,7 +3,8 @@ import { observer, inject, PropTypes as mobxPropTypes } from 'mobx-react';
 import PropTypes from 'prop-types';
 import BookTagMainContent from './BookTagMainContent';
 import BookTag from '../BookTag';
-import { processedArray } from '../../../utils/utils';
+import { processedArray, getContentPosition } from '../../../utils/utils';
+import styles from './bookTagContent.scss';
 
 @inject('bookStore')
 @observer
@@ -25,6 +26,10 @@ export default class BookTagContent extends Component {
     setTagBooks(currentBookTag);
   }
 
+  componentDidMount() {
+    this.contentPosition = getContentPosition(this.bookRef);
+  }
+
   getBookList() {
     const { tagBooks, currentBookTag } = this.props.bookStore;
     const currentTagBooks = tagBooks.get(currentBookTag);
@@ -34,6 +39,13 @@ export default class BookTagContent extends Component {
     }
     return bookList;
   }
+
+  setBookRef = el => {
+    this.bookRef = el;
+  };
+
+  bookRef = null;
+  contentPosition = null;
 
   render() {
     const {
@@ -48,12 +60,15 @@ export default class BookTagContent extends Component {
 
     return (
       <div>
-        {bookList.length !== 0 && (
-          <BookTagMainContent
-            currentBookTag={currentBookTag}
-            bookList={bookList}
-          />
-        )}
+        <div className={styles['display-content']} ref={this.setBookRef}>
+          {bookList.length !== 0 && (
+            <BookTagMainContent
+              currentBookTag={currentBookTag}
+              bookList={bookList}
+              position={this.contentPosition}
+            />
+          )}
+        </div>
 
         <BookTag
           bookTags={bookTags}

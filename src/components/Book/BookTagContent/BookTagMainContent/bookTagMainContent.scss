@@ -1,14 +1,10 @@
 @import '../../../../assets/styles/mixin';
 
-.main-content {
-  @include main-content;
-}
-
-.main-header {
+.display-header {
   @include main-header;
 }
 
-.main-title {
+.display-title {
   display: inline-block;
 }
 
