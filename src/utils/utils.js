@@ -28,8 +28,16 @@ export function getContentPosition(el) {
   };
 }
 
+export function getStarStyle(score) {
+  const posY = Math.round(10 - score) * 10;
+  return {
+    backgroundPosition: `0 ${posY}%`
+  };
+}
+
 export default {
   processedAuthor,
   processedArray,
-  getContentPosition
+  getContentPosition,
+  getStarStyle
 };

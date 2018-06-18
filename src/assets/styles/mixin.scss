@@ -70,3 +70,14 @@
     }
   }
 }
+
+@mixin score-image($img) {
+  background: url($img);
+  display: inline-block;
+  height: 11px;
+  width: 55px;
+}
+
+@mixin average-score {
+  color: #e09015;
+}

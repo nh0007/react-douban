@@ -1,0 +1,14 @@
+.load-more {
+  background: #f6f6f1;
+  color: #37a;
+  cursor: pointer;
+  height: 34px;
+  line-height: 34px;
+  margin-top: 15px;
+  outline: none;
+  text-align: center;
+
+  &:hover {
+    background: #e8e8e8;
+  }
+}

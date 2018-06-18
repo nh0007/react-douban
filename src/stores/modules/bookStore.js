@@ -110,6 +110,7 @@ class BookStore {
   @observable currentBookTags = bookTags[0];
   @observable currentBookTag = bookTags[0].subTags[0];
   @observable tagBooks = new Map();
+  @observable displayContentPosition = null;
 
   bookTypes = bookTypes;
   @observable currentBookType = bookTypes[0];
@@ -127,6 +128,11 @@ class BookStore {
     if (tag !== this.currentBookTag) {
       this.currentBookTag = tag;
     }
+  };
+
+  @action
+  setDisplayContentPosition = position => {
+    this.displayContentPosition = position;
   };
 
   setTagBooks = flow(

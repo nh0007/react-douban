@@ -14,10 +14,12 @@ export default class BookTagContent extends Component {
       bookTags: PropTypes.arrayOf(PropTypes.object).isRequired,
       currentBookTags: PropTypes.object.isRequired,
       currentBookTag: PropTypes.string.isRequired,
+      displayContentPosition: PropTypes.object,
       tagBooks: mobxPropTypes.observableMap.isRequired,
       setCurrentBookTags: PropTypes.func.isRequired,
       setCurrentBookTag: PropTypes.func.isRequired,
-      setTagBooks: PropTypes.func.isRequired
+      setTagBooks: PropTypes.func.isRequired,
+      setDisplayContentPosition: PropTypes.func.isRequired
     }).isRequired
   };
 
@@ -27,7 +29,13 @@ export default class BookTagContent extends Component {
   }
 
   componentDidMount() {
-    this.contentPosition = getContentPosition(this.bookRef);
+    const {
+      displayContentPosition,
+      setDisplayContentPosition
+    } = this.props.bookStore;
+    if (!displayContentPosition) {
+      setDisplayContentPosition(getContentPosition(this.bookRef));
+    }
   }
 
   getBookList() {
@@ -45,13 +53,13 @@ export default class BookTagContent extends Component {
   };
 
   bookRef = null;
-  contentPosition = null;
 
   render() {
     const {
       bookTags,
       currentBookTags,
       currentBookTag,
+      displayContentPosition,
       setCurrentBookTags,
       setCurrentBookTag,
       setTagBooks
@@ -65,7 +73,7 @@ export default class BookTagContent extends Component {
             <BookTagMainContent
               currentBookTag={currentBookTag}
               bookList={bookList}
-              position={this.contentPosition}
+              position={displayContentPosition}
             />
           )}
         </div>
