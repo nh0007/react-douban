@@ -1,0 +1,35 @@
+@import '../../../assets/styles/mixin';
+
+.display-header {
+  @include main-header;
+  margin-bottom: 16px;
+}
+
+.display-title {
+  display: inline-block;
+}
+
+.type-link {
+  @include common-link;
+  cursor: default;
+  margin-left: 12px;
+  outline: none;
+}
+
+.in-active {
+  color: #ccc;
+
+  &:hover {
+    background: #fff;
+    color: #ccc;
+  }
+}
+
+.not-active {
+  cursor: pointer;
+
+  &:hover {
+    background: $common-font-color;
+    color: #fff;
+  }
+}

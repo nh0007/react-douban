@@ -35,9 +35,19 @@ export function getStarStyle(score) {
   };
 }
 
+export function getTagString(tags) {
+  let tagString = '';
+  for (let i = 0, ii = tags.length; i < ii; i += 1) {
+    tagString += `${tags[i].name}${i === ii - 1 ? '' : ' / '}`;
+  }
+  tagString = tagString === '' ? '无' : tagString;
+  return tagString;
+}
+
 export default {
   processedAuthor,
   processedArray,
   getContentPosition,
-  getStarStyle
+  getStarStyle,
+  getTagString
 };
