@@ -30,8 +30,29 @@ export function getCurrentTypeBooks(type, start = 0, count = 12) {
   });
 }
 
+export function getCurrentTypeMovies(type, start = 0, count = 48) {
+  return axios.get(`/movie/${type}`, {
+    params: {
+      start,
+      count
+    }
+  });
+}
+
+export function getCurrentTagMovies(tag, start = 0, count = 20) {
+  return axios.get('/movie/search', {
+    params: {
+      tag,
+      start,
+      count
+    }
+  });
+}
+
 export default {
   getSearchData,
   getCurrentTagBooks,
-  getCurrentTypeBooks
+  getCurrentTypeBooks,
+  getCurrentTypeMovies,
+  getCurrentTagMovies
 };
