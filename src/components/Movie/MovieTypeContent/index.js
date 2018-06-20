@@ -3,6 +3,7 @@ import { observable, action } from 'mobx';
 import { observer, inject } from 'mobx-react';
 import PropTypes from 'prop-types';
 import CommonSlider from '../../Common/CommonSlider';
+import MovieModal from './MovieModal';
 import DisplayList from './DisplayList';
 import styles from './movieTypeContent.scss';
 
@@ -38,6 +39,29 @@ export default class MovieTypeContent extends Component {
     }
   };
 
+  @action
+  setSelectedMovie = movie => {
+    if (movie !== this.selectedMovie) {
+      this.selectedMovie = movie;
+    }
+    this.showModal();
+  };
+
+  @action
+  setIsShowModal = isShow => {
+    if (isShow !== this.isShowModal) {
+      this.isShowModal = isShow;
+    }
+  };
+
+  showModal = () => {
+    this.setIsShowModal(true);
+  };
+
+  hideModal = () => {
+    this.setIsShowModal(false);
+  };
+
   handleTypeClick = type => {
     this.setCurrentPage(0);
     const { setCurrentMovieType, setTypeMovies } = this.props.movieStore;
@@ -71,6 +95,8 @@ export default class MovieTypeContent extends Component {
   pageCount = 0;
   @observable currentPage = 0;
   @observable currentDirection = 'left';
+  @observable selectedMovie = { title: '' };
+  @observable isShowModal = false;
 
   render() {
     const {
@@ -118,8 +144,15 @@ export default class MovieTypeContent extends Component {
             currentDirection={this.currentDirection}
             movieList={currentTypeMovieList}
             currentMovieType={currentMovieType}
+            setSelectedMovie={this.setSelectedMovie}
           />
         )}
+
+        <MovieModal
+          selectedMovie={this.selectedMovie}
+          isShowModal={this.isShowModal}
+          hideModal={this.hideModal}
+        />
       </div>
     );
   }

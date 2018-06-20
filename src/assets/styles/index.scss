@@ -88,4 +88,39 @@
     transform: translateX(100%);
     transition: transform 0.5s ease;
   }
+
+  .modal-enter {
+    opacity: 0;
+  }
+
+  .modal-exit-active {
+    opacity: 0;
+  }
+
+  .modal-container {
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 20px 30px;
+    transition: all 0.3s ease;
+    width: 300px;
+    zoom: 1;
+  }
+
+  .modal-enter {
+    .modal-container {
+      transform: scale(1.1);
+    }
+  }
+
+  .modal-exit-active {
+    .modal-container {
+      transform: scale(1.1);
+    }
+  }
 }

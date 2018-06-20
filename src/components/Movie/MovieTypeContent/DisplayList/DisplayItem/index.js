@@ -12,7 +12,8 @@ export default class DisplayItem extends PureComponent {
     currentMovieType: PropTypes.shape({
       value: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired
-    }).isRequired
+    }).isRequired,
+    setSelectedMovie: PropTypes.func.isRequired
   };
 
   render() {
@@ -20,7 +21,8 @@ export default class DisplayItem extends PureComponent {
       isShow,
       currentDirection,
       movieArray,
-      currentMovieType
+      currentMovieType,
+      setSelectedMovie
     } = this.props;
     return (
       <CSSTransition
@@ -60,7 +62,12 @@ export default class DisplayItem extends PureComponent {
                 </p>
               )}
               {currentMovieType.value === 'in_theaters' ? (
-                <p className={styles['buy-ticket']}>选座购票</p>
+                <button
+                  className={styles['buy-ticket']}
+                  onClick={() => setSelectedMovie(movie)}
+                >
+                  选座购票
+                </button>
               ) : (
                 <p className={styles['movie-genres']}>
                   类型:{' '}

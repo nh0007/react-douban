@@ -1,0 +1,14 @@
+@import '../../../../assets/styles/mixin';
+
+.modal-header {
+  color: #42b983;
+}
+
+.modal-title {
+  margin: 0 3px;
+}
+
+.movie-link {
+  @include common-link;
+  margin: 0 6px;
+}

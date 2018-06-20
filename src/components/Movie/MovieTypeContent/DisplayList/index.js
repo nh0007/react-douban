@@ -11,7 +11,8 @@ export default class DisplayList extends PureComponent {
     currentMovieType: PropTypes.shape({
       value: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired
-    }).isRequired
+    }).isRequired,
+    setSelectedMovie: PropTypes.func.isRequired
   };
 
   render() {
@@ -19,7 +20,8 @@ export default class DisplayList extends PureComponent {
       currentPage,
       currentDirection,
       movieList,
-      currentMovieType
+      currentMovieType,
+      setSelectedMovie
     } = this.props;
     return (
       <div className={styles['movie-list']}>
@@ -30,6 +32,7 @@ export default class DisplayList extends PureComponent {
             currentDirection={currentDirection}
             movieArray={movieArray}
             currentMovieType={currentMovieType}
+            setSelectedMovie={setSelectedMovie}
           />
         ))}
       </div>
