@@ -1,4 +1,5 @@
-import { observable, action, flow } from 'mobx';
+import { observable, action, computed, flow } from 'mobx';
+import { processedArray } from '../../utils/utils';
 import { getCurrentTypeMovies, getCurrentTagMovies } from '../../apis';
 
 const movieTypes = [
@@ -47,6 +48,15 @@ class MovieStore {
       this.currentMovieTag = tag;
     }
   };
+
+  @computed
+  get currentTypeMovieList() {
+    const currentTypeMovies = this.typeMovies.get(this.currentMovieType.value);
+    if (!currentTypeMovies) {
+      return [];
+    }
+    return processedArray(currentTypeMovies, 12);
+  }
 
   setTypeMovies = flow(
     function*(type, start, count, isAfresh = false) {

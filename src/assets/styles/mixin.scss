@@ -71,6 +71,24 @@
   }
 }
 
+@mixin in-active {
+  color: #ccc;
+
+  &:hover {
+    background: #fff;
+    color: #ccc;
+  }
+}
+
+@mixin not-active {
+  cursor: pointer;
+
+  &:hover {
+    background: $common-font-color;
+    color: #fff;
+  }
+}
+
 @mixin score-image($img) {
   background: url($img);
   display: inline-block;

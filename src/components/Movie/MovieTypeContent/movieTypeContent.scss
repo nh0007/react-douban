@@ -2,7 +2,6 @@
 
 .display-header {
   @include main-header;
-  margin-bottom: 16px;
 }
 
 .display-title {
@@ -22,4 +21,9 @@
 
 .not-active {
   @include not-active;
+}
+
+.slider-component {
+  float: right;
+  margin-top: 5px;
 }

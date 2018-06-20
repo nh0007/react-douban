@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import BookTagContent from '../Book/BookTagContent';
 import BookTagMoreContent from '../Book/BookTagMoreContent';
 import BookTypeContent from '../Book/BookTypeContent';
+import MovieTypeContent from '../Movie/MovieTypeContent';
 import styles from './main.scss';
 
 export default function Main() {
@@ -17,6 +18,7 @@ export default function Main() {
           component={BookTagMoreContent}
         />
         <Route exact path="/book-type" component={BookTypeContent} />
+        <Route exact path="/movie-show-time" component={MovieTypeContent} />
       </Switch>
     </main>
   );
