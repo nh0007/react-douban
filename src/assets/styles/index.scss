@@ -53,6 +53,16 @@
     }
   }
 
+  .movie-tag-active {
+    background: $movie-color;
+  }
+
+  .movie-tag-hover {
+    &:hover {
+      background: $movie-color;
+    }
+  }
+
   .slider-right-enter {
     transform: translateX(100%);
   }

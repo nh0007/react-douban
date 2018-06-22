@@ -1,0 +1,31 @@
+@import '../../../../assets/styles/mixin';
+
+.movie-page {
+  @include common-slider-page;
+
+  li {
+    width: 20%;
+  }
+}
+
+.movie-image {
+  height: 160px;
+  width: 115px;
+}
+
+.movie-title {
+  @include common-title;
+  margin: 6px 0;
+}
+
+.movie-score {
+  margin: 10px 0;
+
+  span {
+    color: #e09015;
+  }
+}
+
+.movie-year {
+  margin: 8px 0;
+}

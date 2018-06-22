@@ -1,14 +1,9 @@
 @import '../../../../../assets/styles/mixin';
 
 .movie-page {
-  height: 100%;
-  position: absolute;
-  width: 100%;
+  @include common-slider-page;
 
   li {
-    display: inline-block;
-    height: 50%;
-    text-align: center;
     width: 16.66%;
   }
 }

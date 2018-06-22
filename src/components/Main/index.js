@@ -4,6 +4,7 @@ import BookTagContent from '../Book/BookTagContent';
 import BookTagMoreContent from '../Book/BookTagMoreContent';
 import BookTypeContent from '../Book/BookTypeContent';
 import MovieTypeContent from '../Movie/MovieTypeContent';
+import MovieTagContent from '../Movie/MovieTagContent';
 import styles from './main.scss';
 
 export default function Main() {
@@ -19,6 +20,7 @@ export default function Main() {
         />
         <Route exact path="/book-type" component={BookTypeContent} />
         <Route exact path="/movie-show-time" component={MovieTypeContent} />
+        <Route exact path="/movie-tag" component={MovieTagContent} />
       </Switch>
     </main>
   );

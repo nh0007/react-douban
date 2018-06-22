@@ -80,6 +80,19 @@
   }
 }
 
+@mixin common-slider-page {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+
+  li {
+    display: inline-block;
+    height: 50%;
+    overflow: hidden;
+    text-align: center;
+  }
+}
+
 @mixin not-active {
   cursor: pointer;
 

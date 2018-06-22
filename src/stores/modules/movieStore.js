@@ -33,7 +33,7 @@ class MovieStore {
   @observable typeMovies = new Map();
   movieTags = movieTags;
   @observable currentMovieTag = movieTags[0];
-  tagMovies = new Map();
+  @observable tagMovies = new Map();
 
   @action
   setCurrentMovieType = type => {
@@ -56,6 +56,15 @@ class MovieStore {
       return [];
     }
     return processedArray(currentTypeMovies, 12);
+  }
+
+  @computed
+  get currentTagMovieList() {
+    const currentTagMovies = this.tagMovies.get(this.currentMovieTag);
+    if (!currentTagMovies) {
+      return [];
+    }
+    return processedArray(currentTagMovies, 10);
   }
 
   setTypeMovies = flow(
