@@ -49,10 +49,21 @@ export function getCurrentTagMovies(tag, start = 0, count = 20) {
   });
 }
 
+export function getCurrentTagMusics(tag, start = 0, count = 24) {
+  return axios.get('/music/search', {
+    params: {
+      tag,
+      start,
+      count
+    }
+  });
+}
+
 export default {
   getSearchData,
   getCurrentTagBooks,
   getCurrentTypeBooks,
   getCurrentTypeMovies,
-  getCurrentTagMovies
+  getCurrentTagMovies,
+  getCurrentTagMusics
 };
