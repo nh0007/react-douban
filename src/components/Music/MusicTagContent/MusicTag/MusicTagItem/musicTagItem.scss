@@ -1,0 +1,35 @@
+.music-tag-item {
+  display: inline-block;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  vertical-align: middle;
+
+  span {
+    outline: none;
+  }
+
+  &::before {
+    color: #222;
+    content: ' | ';
+    padding: 0 3px;
+  }
+
+  &:first-child::before {
+    content: ' ';
+  }
+}
+
+.in-active {
+  color: #138a64;
+  font-weight: bolder;
+}
+
+.not-active {
+  color: #999;
+  cursor: pointer;
+
+  &:hover {
+    color: #138a64;
+    text-decoration: underline;
+  }
+}

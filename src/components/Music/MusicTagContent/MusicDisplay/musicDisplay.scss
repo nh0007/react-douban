@@ -1,0 +1,103 @@
+@import '../../../../assets/styles/mixin';
+
+.music-list {
+  background: #f5f7f8;
+  font-size: 1.3rem;
+  padding: 15px 0 15px 20px;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    margin-right: 20px;
+    width: 130px;
+  }
+}
+
+.music-cover {
+  background: #fff;
+  border: 5px solid #fff;
+  box-shadow: 0 0 0 1px #dfdcdc;
+  height: 125px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+  width: 125px;
+
+  &:hover .music-hover {
+    display: block;
+  }
+
+  &:hover .outer-play-btn {
+    background: #fff;
+    opacity: 1;
+  }
+
+  &:hover .inner-play-btn {
+    border-color: transparent transparent transparent #000;
+  }
+}
+
+.music-image {
+  height: 125px;
+  width: 125px;
+}
+
+.music-hover {
+  background: #333;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  height: 100%;
+  left: 0;
+  opacity: 0.85;
+  overflow: hidden;
+  padding: 14px;
+  position: absolute;
+  text-align: left;
+  top: 0;
+  width: 100%;
+
+  p {
+    @include text-hidden;
+    margin: 4px 0;
+  }
+}
+
+.outer-play-btn {
+  background: #222;
+  border-radius: 100%;
+  bottom: 10px;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  width: 20px;
+}
+
+.inner-play-btn {
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+  border-width: 5px 0 5px 7px;
+  display: inline-block;
+  height: 0;
+  margin: 5px 0 0 4px;
+  opacity: 0.95;
+  width: 0;
+}
+
+.music-singer,
+.music-title {
+  @include text-hidden;
+  color: #999;
+  margin-bottom: 6px;
+}
+
+.music-link {
+  color: #138a64;
+  font-size: 1.4rem;
+
+  &:hover {
+    background-color: #138a64;
+    color: #fff;
+  }
+}

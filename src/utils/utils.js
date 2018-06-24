@@ -44,10 +44,16 @@ export function getTagString(tags) {
   return tagString;
 }
 
+export function getSongArray(songs) {
+  const songArray = songs.split('\n').map(song => song.slice(3));
+  return songArray.slice(0, 4);
+}
+
 export default {
   processedAuthor,
   processedArray,
   getContentPosition,
   getStarStyle,
-  getTagString
+  getTagString,
+  getSongArray
 };
