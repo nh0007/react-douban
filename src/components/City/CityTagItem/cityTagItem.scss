@@ -1,0 +1,16 @@
+@import '../../../assets/styles/mixin';
+@import '../../../assets/styles/vars';
+
+.tag-item {
+  @include aside-item;
+}
+
+.in-active {
+  background: $city-color;
+}
+
+.not-active {
+  &:hover {
+    background: $city-color;
+  }
+}

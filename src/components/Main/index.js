@@ -6,6 +6,7 @@ import BookTypeContent from '../Book/BookTypeContent';
 import MovieTypeContent from '../Movie/MovieTypeContent';
 import MovieTagContent from '../Movie/MovieTagContent';
 import MusicTagContent from '../Music/MusicTagContent';
+import CityActivity from '../City/CityActivity';
 import styles from './main.scss';
 
 export default function Main() {
@@ -23,6 +24,7 @@ export default function Main() {
         <Route exact path="/movie-show-time" component={MovieTypeContent} />
         <Route exact path="/movie-tag" component={MovieTagContent} />
         <Route exact path="/music-tag" component={MusicTagContent} />
+        <Route exact path="/city" component={CityActivity} />
       </Switch>
     </main>
   );

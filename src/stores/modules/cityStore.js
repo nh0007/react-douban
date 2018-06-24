@@ -24,7 +24,7 @@ class CityStore {
   activityTypes = activityTypes;
   dayTypes = dayTypes;
   @observable cities = [];
-  @observable currentCity = null;
+  @observable currentCity = {};
 
   @action
   setCurrentCity = city => {
