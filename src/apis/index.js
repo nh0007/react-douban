@@ -59,11 +59,21 @@ export function getCurrentTagMusics(tag, start = 0, count = 24) {
   });
 }
 
+export function getCities(start = 0, count = 20) {
+  return axios.get('/loc/list', {
+    params: {
+      start,
+      count
+    }
+  });
+}
+
 export default {
   getSearchData,
   getCurrentTagBooks,
   getCurrentTypeBooks,
   getCurrentTypeMovies,
   getCurrentTagMovies,
-  getCurrentTagMusics
+  getCurrentTagMusics,
+  getCities
 };
