@@ -1,0 +1,17 @@
+@import '../../../assets/styles/mixin';
+
+.display-header {
+  @include main-header;
+  margin-bottom: 20px;
+}
+
+.display-title {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: normal;
+  margin-right: 40px;
+}
+
+.day-list {
+  display: inline-block;
+}

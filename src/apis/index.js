@@ -68,6 +68,18 @@ export function getCities(start = 0, count = 20) {
   });
 }
 
+export function getActivities(loc, dayType, type, start = 0, count = 6) {
+  return axios.get('/event/list', {
+    params: {
+      loc,
+      day_type: dayType,
+      type,
+      start,
+      count
+    }
+  });
+}
+
 export default {
   getSearchData,
   getCurrentTagBooks,
@@ -75,5 +87,6 @@ export default {
   getCurrentTypeMovies,
   getCurrentTagMovies,
   getCurrentTagMusics,
-  getCities
+  getCities,
+  getActivities
 };

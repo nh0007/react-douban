@@ -1,0 +1,28 @@
+.day-tag {
+  display: inline-block;
+  margin-right: 10px;
+
+  span {
+    border-radius: 2px;
+    display: inline-block;
+    height: 16px;
+    line-height: 1.4;
+    outline: none;
+    padding: 1px 15px;
+  }
+
+  .in-active {
+    background: #e6e6e6;
+    color: #333;
+  }
+
+  .not-active {
+    color: #0192b5;
+    cursor: pointer;
+
+    &:hover {
+      background: #6cc1d6;
+      color: #fff;
+    }
+  }
+}
