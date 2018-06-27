@@ -48,6 +48,18 @@ export default class CityActivityDisplayItem extends Component {
     }.bind(this)
   );
 
+  componentWillReact() {
+    const { currentCity, currentActivityType } = this.props;
+    if (currentCity.id !== this.lastCity.id) {
+      this.setActivityList(
+        currentCity.id,
+        this.currentDayType.value,
+        currentActivityType.value
+      );
+      this.lastCity = currentCity;
+    }
+  }
+
   handleClick = dayType => {
     if (dayType.value !== this.currentDayType.value) {
       const { currentCity, currentActivityType } = this.props;
@@ -60,6 +72,7 @@ export default class CityActivityDisplayItem extends Component {
     }
   };
 
+  lastCity = this.props.currentCity;
   @observable currentDayType = this.props.dayTypes[0];
   @observable activityList = [];
 
