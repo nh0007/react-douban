@@ -19,7 +19,7 @@ export default class BookTagMoreContent extends Component {
     }).isRequired
   };
 
-  componentWillMount() {
+  componentDidMount() {
     const { currentBookTag, setTagBooks } = this.props.bookStore;
     setTagBooks(currentBookTag);
   }

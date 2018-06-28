@@ -17,7 +17,7 @@ export default class BookTypeContent extends Component {
     }).isRequired
   };
 
-  componentWillMount() {
+  componentDidMount() {
     const { currentBookType, setTypeBooks } = this.props.bookStore;
     setTypeBooks(currentBookType);
   }

@@ -17,7 +17,7 @@ export default class MusicTagContent extends Component {
     }).isRequired
   };
 
-  componentWillMount() {
+  componentDidMount() {
     const { currentMusicTag, setTagMusics } = this.props.musicStore;
     setTagMusics(currentMusicTag);
   }

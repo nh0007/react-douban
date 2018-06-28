@@ -17,7 +17,7 @@ export default class MovieTagContent extends Component {
     }).isRequired
   };
 
-  componentWillMount() {
+  componentDidMount() {
     const { currentMovieTag, setTagMovies } = this.props.movieStore;
     setTagMovies(currentMovieTag);
   }

@@ -20,7 +20,7 @@ export default class CityActivityDisplayItem extends Component {
     dayTypes: PropTypes.arrayOf(PropTypes.object).isRequired
   };
 
-  componentWillMount() {
+  componentDidMount() {
     const { currentCity, currentActivityType } = this.props;
     this.setActivityList(
       currentCity.id,

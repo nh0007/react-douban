@@ -18,7 +18,7 @@ export default class CityActivity extends Component {
     }).isRequired
   };
 
-  componentWillMount() {
+  componentDidMount() {
     const { setCities } = this.props.cityStore;
     setCities();
   }

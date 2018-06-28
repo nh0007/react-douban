@@ -20,7 +20,7 @@ export default class MovieTypeContent extends Component {
     }).isRequired
   };
 
-  componentWillMount() {
+  componentDidMount() {
     const { currentMovieType, setTypeMovies } = this.props.movieStore;
     setTypeMovies(currentMovieType);
   }

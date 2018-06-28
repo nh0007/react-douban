@@ -23,16 +23,14 @@ export default class BookTagContent extends Component {
     }).isRequired
   };
 
-  componentWillMount() {
-    const { currentBookTag, setTagBooks } = this.props.bookStore;
-    setTagBooks(currentBookTag);
-  }
-
   componentDidMount() {
     const {
       displayContentPosition,
-      setDisplayContentPosition
+      setDisplayContentPosition,
+      currentBookTag,
+      setTagBooks
     } = this.props.bookStore;
+    setTagBooks(currentBookTag);
     if (!displayContentPosition) {
       setDisplayContentPosition(getContentPosition(this.bookRef));
     }
