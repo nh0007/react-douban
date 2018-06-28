@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import PropTypes from 'prop-types';
-import Display from './Display';
+import MovieTagDisplay from './MovieTagDisplay';
 import MovieTag from './MovieTag';
 
 @inject('movieStore')
@@ -36,7 +36,7 @@ export default class MovieTagContent extends Component {
     return (
       <div>
         {this.pageCount !== 0 && (
-          <Display
+          <MovieTagDisplay
             currentMovieTag={currentMovieTag}
             movieList={currentTagMovieList}
           />

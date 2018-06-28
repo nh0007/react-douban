@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject, PropTypes as mobxPropTypes } from 'mobx-react';
 import PropTypes from 'prop-types';
-import BookTagMainContent from './BookTagMainContent';
+import BookTagDisplay from './BookTagDisplay';
 import BookTag from '../BookTag';
 import { processedArray, getContentPosition } from '../../../utils/utils';
 import styles from './bookTagContent.scss';
@@ -68,7 +68,7 @@ export default class BookTagContent extends Component {
       <div>
         <div className={styles['display-content']} ref={this.setBookRef}>
           {bookList.length !== 0 && (
-            <BookTagMainContent
+            <BookTagDisplay
               currentBookTag={currentBookTag}
               bookList={bookList}
               position={displayContentPosition}

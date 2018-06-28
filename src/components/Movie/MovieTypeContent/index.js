@@ -4,7 +4,7 @@ import { observer, inject } from 'mobx-react';
 import PropTypes from 'prop-types';
 import CommonSlider from '../../Common/CommonSlider';
 import MovieModal from './MovieModal';
-import DisplayList from './DisplayList';
+import MovieTypeDisplayList from './MovieTypeDisplayList';
 import styles from './movieTypeContent.scss';
 
 @inject('movieStore')
@@ -139,7 +139,7 @@ export default class MovieTypeContent extends Component {
         </div>
 
         {this.pageCount !== 0 && (
-          <DisplayList
+          <MovieTypeDisplayList
             currentPage={this.currentPage}
             currentDirection={this.currentDirection}
             movieList={currentTypeMovieList}

@@ -1,0 +1,24 @@
+@import '../../../../assets/styles/mixin';
+
+.book-page {
+  @include common-slider-page;
+
+  li {
+    width: 20%;
+  }
+}
+
+.book-image {
+  height: 70%;
+  width: 85%;
+}
+
+.book-title {
+  @include common-title;
+}
+
+.book-author {
+  @include text-hidden;
+  font-size: 1.3rem;
+  margin: 6px 0;
+}

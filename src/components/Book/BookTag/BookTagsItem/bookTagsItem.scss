@@ -1,0 +1,30 @@
+@import '../../../../assets/styles/vars';
+
+.tags-item {
+  display: inline-block;
+  margin: 5px 30px 3px 0;
+  padding: 3px 5px;
+
+  button {
+    background: none;
+    color: $common-font-color;
+    cursor: pointer;
+    font-size: 1.2rem;
+
+    &:hover {
+      color: #09f;
+    }
+  }
+}
+
+.selected-item {
+  background: #111;
+
+  button {
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}

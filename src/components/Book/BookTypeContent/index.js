@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject, PropTypes as mobxPropTypes } from 'mobx-react';
 import PropTypes from 'prop-types';
-import DisplayList from './DisplayList';
+import BookTypeDisplayList from './BookTypeDisplayList';
 import styles from './bookTypeContent.scss';
 
 @inject('bookStore')
@@ -52,7 +52,7 @@ export default class BookTypeContent extends Component {
           ))}
         </div>
 
-        {bookList && <DisplayList bookList={bookList} />}
+        {bookList && <BookTypeDisplayList bookList={bookList} />}
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import BookTagsItem from './BookTagsItem';
+import BookTagsItem from '../BookTagsItem';
 import styles from './bookTagsList.scss';
 
 export default class BookTagsList extends PureComponent {

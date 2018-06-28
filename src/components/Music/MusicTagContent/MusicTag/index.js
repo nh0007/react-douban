@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import MusicTagItem from './MusicTagItem';
+import MusicTagItem from '../MusicTagItem';
 import styles from './musicTag.scss';
 
 export default class MusicTag extends PureComponent {

@@ -1,0 +1,62 @@
+@import '../../../../assets/styles/mixin';
+@import '../../../../assets/styles/vars';
+
+.book-item {
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+  padding: 15px 0;
+  zoom: 1;
+}
+
+.book-image {
+  float: left;
+  height: 128px;
+  margin-right: 20px;
+  width: 90px;
+}
+
+.book-title {
+  @include common-title;
+}
+
+.book-info {
+  overflow: hidden;
+  zoom: 1;
+}
+
+.book-other-info {
+  margin: 6px 0 8px;
+}
+
+.score-image {
+  @include score-image('../../../../assets/images/scoring.png');
+}
+
+.average-score {
+  @include average-score;
+  margin: 0 9px;
+}
+
+.book-summary {
+  line-height: 1.6;
+  margin: 12px 0 10px;
+}
+
+.buy-books {
+  color: $common-font-color;
+
+  &:hover {
+    background: $common-font-color;
+    color: #fff;
+  }
+}
+
+.e-book {
+  color: #973f3a;
+  float: right;
+
+  &:hover {
+    background: #973f31;
+    color: #fff;
+  }
+}

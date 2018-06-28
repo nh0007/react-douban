@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject, PropTypes as mobxPropTypes } from 'mobx-react';
 import PropTypes from 'prop-types';
-import Display from './Display';
+import BookTagMoreDisplay from './BookTagMoreDisplay';
 import BookTag from '../BookTag';
 
 @inject('bookStore')
@@ -38,7 +38,7 @@ export default class BookTagMoreContent extends Component {
     return (
       <div>
         {bookList && (
-          <Display
+          <BookTagMoreDisplay
             currentBookTag={currentBookTag}
             bookList={bookList}
             setTagBooks={setTagBooks}

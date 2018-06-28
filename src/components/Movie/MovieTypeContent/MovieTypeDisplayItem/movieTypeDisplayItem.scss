@@ -1,0 +1,50 @@
+@import '../../../../assets/styles/mixin';
+
+.movie-page {
+  @include common-slider-page;
+
+  li {
+    width: 16.66%;
+  }
+}
+
+.movie-image {
+  height: 160px;
+  width: 115px;
+}
+
+.movie-title {
+  @include text-hidden;
+  font-size: 1.3rem;
+  font-weight: normal;
+  margin: 12px 0 16px;
+
+  a {
+    color: #333;
+  }
+}
+
+.score-image {
+  @include score-image('../../../../assets/images/scoring.png');
+}
+
+.average-score {
+  color: #e09015;
+  margin-left: 4px;
+}
+
+.buy-ticket {
+  background: #268dcd;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  height: 24px;
+  line-height: 24px;
+  margin: 12px auto 0;
+  text-align: center;
+  width: 90px;
+}
+
+.movie-genres {
+  margin: 12px 0;
+}
