@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { observable, action } from 'mobx';
 import { observer, inject } from 'mobx-react';
 import PropTypes from 'prop-types';
+import { Facebook as Loading } from 'react-content-loader';
 import CommonSlider from '../../Common/CommonSlider';
 import MovieModal from './MovieModal';
 import MovieTypeDisplayList from './MovieTypeDisplayList';
@@ -138,7 +139,7 @@ export default class MovieTypeContent extends Component {
           </div>
         </div>
 
-        {this.pageCount !== 0 && (
+        {this.pageCount !== 0 ? (
           <MovieTypeDisplayList
             currentPage={this.currentPage}
             currentDirection={this.currentDirection}
@@ -146,6 +147,8 @@ export default class MovieTypeContent extends Component {
             currentMovieType={currentMovieType}
             setSelectedMovie={this.setSelectedMovie}
           />
+        ) : (
+          <Loading speed="1" primaryColor="#f0f3f5" width="500" height="165" />
         )}
 
         <MovieModal

@@ -58,7 +58,7 @@ export default class MovieTagDisplay extends Component {
     const { currentMovieTag, movieList } = this.props;
     this.pageCount = movieList.length;
     return (
-      <div className={styles['display-content']}>
+      <div>
         <div className={styles['display-header']}>
           <h2 className={styles['display-title']}>{currentMovieTag}</h2>
 

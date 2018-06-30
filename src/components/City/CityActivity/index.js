@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import PropTypes from 'prop-types';
+import { Facebook as Loading } from 'react-content-loader';
 import CityActivityDisplay from '../CityActivityDisplay';
 import CityTag from '../CityTag';
 
@@ -33,7 +34,7 @@ export default class CityActivity extends Component {
     } = this.props.cityStore;
     return (
       <div>
-        {cities.length !== 0 && (
+        {cities.length !== 0 ? (
           <div>
             <CityTag
               cityList={cities}
@@ -47,6 +48,8 @@ export default class CityActivity extends Component {
               dayTypes={dayTypes}
             />
           </div>
+        ) : (
+          <Loading speed="1" primaryColor="#f6f5f2" width="500" height="165" />
         )}
       </div>
     );

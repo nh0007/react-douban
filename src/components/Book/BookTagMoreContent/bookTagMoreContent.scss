@@ -1,0 +1,6 @@
+@import '../../../assets/styles/mixin';
+
+.display-content {
+  @include display-content;
+  font-size: 1.3rem;
+}

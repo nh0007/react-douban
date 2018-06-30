@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { observable, action, flow } from 'mobx';
 import { observer } from 'mobx-react';
 import PropTypes from 'prop-types';
+import { Facebook as Loading } from 'react-content-loader';
 import CityActivityDisplayHeader from '../CityActivityDisplayHeader';
 import CityActivityDisplayMain from '../CityActivityDisplayMain';
 import { getActivities } from '../../../apis';
@@ -87,8 +88,10 @@ export default class CityActivityDisplayItem extends Component {
           handleClick={this.handleClick}
         />
 
-        {this.activityList.length !== 0 && (
+        {this.activityList.length !== 0 ? (
           <CityActivityDisplayMain activityList={this.activityList} />
+        ) : (
+          <Loading speed="1" primaryColor="#f6f5f2" />
         )}
       </div>
     );

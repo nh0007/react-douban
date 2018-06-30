@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject, PropTypes as mobxPropTypes } from 'mobx-react';
 import PropTypes from 'prop-types';
+import { Facebook as Loading } from 'react-content-loader';
 import BookTypeDisplayList from './BookTypeDisplayList';
 import styles from './bookTypeContent.scss';
 
@@ -52,7 +53,11 @@ export default class BookTypeContent extends Component {
           ))}
         </div>
 
-        {bookList && <BookTypeDisplayList bookList={bookList} />}
+        {bookList ? (
+          <BookTypeDisplayList bookList={bookList} />
+        ) : (
+          <Loading speed="1" primaryColor="#f6f6f1" width="500" height="165" />
+        )}
       </div>
     );
   }

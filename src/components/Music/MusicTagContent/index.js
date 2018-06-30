@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import PropTypes from 'prop-types';
+import { Facebook as Loading } from 'react-content-loader';
 import MusicTag from './MusicTag';
 import MusicDisplay from './MusicDisplay';
 
@@ -38,8 +39,16 @@ export default class MusicTagContent extends Component {
           setCurrentMusicTag={setCurrentMusicTag}
           setTagMusics={setTagMusics}
         />
-        {currentTagMusicList.length !== 0 && (
+        {currentTagMusicList.length !== 0 ? (
           <MusicDisplay musicList={currentTagMusicList} />
+        ) : (
+          <Loading
+            speed="1"
+            primaryColor="#f0f3ef"
+            style={{ marginTop: '16px' }}
+            width="500"
+            height="165"
+          />
         )}
       </div>
     );

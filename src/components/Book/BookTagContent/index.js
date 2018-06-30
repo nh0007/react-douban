@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject, PropTypes as mobxPropTypes } from 'mobx-react';
 import PropTypes from 'prop-types';
+import { Facebook as Loading } from 'react-content-loader';
 import BookTagDisplay from './BookTagDisplay';
 import BookTag from '../BookTag';
 import { processedArray, getContentPosition } from '../../../utils/utils';
@@ -67,12 +68,14 @@ export default class BookTagContent extends Component {
     return (
       <div>
         <div className={styles['display-content']} ref={this.setBookRef}>
-          {bookList.length !== 0 && (
+          {bookList.length !== 0 ? (
             <BookTagDisplay
               currentBookTag={currentBookTag}
               bookList={bookList}
               position={displayContentPosition}
             />
+          ) : (
+            <Loading speed="1" primaryColor="#f6f6f1" />
           )}
         </div>
 

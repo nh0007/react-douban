@@ -46,7 +46,7 @@ export default class BookTagMoreDisplay extends Component {
     const { currentBookTag, bookList } = this.props;
     const newBookList = bookList.slice(0, this.pageCount);
     return (
-      <div className={styles['display-content']}>
+      <div>
         <div className={styles['display-header']}>
           <h2>豆瓣读书标签: {currentBookTag}</h2>
         </div>

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { observer, inject, PropTypes as mobxPropTypes } from 'mobx-react';
 import PropTypes from 'prop-types';
+import { Facebook as Loading } from 'react-content-loader';
 import BookTagMoreDisplay from './BookTagMoreDisplay';
 import BookTag from '../BookTag';
+import styles from './bookTagMoreContent.scss';
 
 @inject('bookStore')
 @observer
@@ -37,13 +39,17 @@ export default class BookTagMoreContent extends Component {
     const bookList = tagBooks.get(currentBookTag);
     return (
       <div>
-        {bookList && (
-          <BookTagMoreDisplay
-            currentBookTag={currentBookTag}
-            bookList={bookList}
-            setTagBooks={setTagBooks}
-          />
-        )}
+        <div className={styles['display-content']}>
+          {bookList ? (
+            <BookTagMoreDisplay
+              currentBookTag={currentBookTag}
+              bookList={bookList}
+              setTagBooks={setTagBooks}
+            />
+          ) : (
+            <Loading speed="1" primaryColor="#f6f6f1" />
+          )}
+        </div>
 
         <BookTag
           bookTags={bookTags}
