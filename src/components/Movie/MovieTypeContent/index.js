@@ -95,7 +95,7 @@ export default class MovieTypeContent extends Component {
 
   pageCount = 0;
   @observable currentPage = 0;
-  @observable currentDirection = 'left';
+  @observable currentDirection = 'right';
   @observable selectedMovie = { title: '' };
   @observable isShowModal = false;
 
