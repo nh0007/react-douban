@@ -16,6 +16,7 @@ export default class BookTagPrompt extends PureComponent {
     }).isRequired
   };
 
+  // 计算提示框显示位置
   getPromptPosition() {
     const { bookPrompt, position } = this.props;
     const { width, height, top } = position;

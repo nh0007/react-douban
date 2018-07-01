@@ -31,7 +31,9 @@ export default class BookTagContent extends Component {
       currentBookTag,
       setTagBooks
     } = this.props.bookStore;
+    // 获取数据
     setTagBooks(currentBookTag);
+    // 获取容器位置，用于设置'BookTagPrompt'组件显示位置
     if (!displayContentPosition) {
       setDisplayContentPosition(getContentPosition(this.bookRef));
     }

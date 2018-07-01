@@ -29,7 +29,7 @@ export default class MovieTagDisplay extends Component {
 
   pageCount = 0;
   @observable currentPage = 0;
-  @observable currentDirection = 'left';
+  @observable currentDirection = 'right';
 
   handleDotClick = page => {
     if (page === this.currentPage) return;

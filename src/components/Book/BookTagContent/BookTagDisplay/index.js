@@ -42,7 +42,7 @@ export default class BookTagDisplay extends Component {
 
   pageCount = 0;
   @observable currentPage = 0;
-  @observable currentDirection = 'left';
+  @observable currentDirection = 'right';
   @observable bookPrompt = null;
 
   handleDotClick = page => {

@@ -24,6 +24,7 @@ export default class Header extends Component {
     this.onHashChange();
   }
 
+  // 路由变化时，切换到不同路由组件
   onHashChange() {
     const { modules, currentModule, setCurrentModule } = this.props.headerStore;
     const hashname = window.location.pathname;

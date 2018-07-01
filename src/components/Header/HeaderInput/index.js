@@ -24,6 +24,7 @@ export default class HeaderInput extends Component {
     const { value } = e.target;
     this.setKeyword(value);
     const { currentModule } = this.props.headerStore;
+    // 豆瓣api没有同城活动的搜索接口，因此输入内容为空或者在同城活动页搜索时不予响应
     if (value !== '' && currentModule.value !== 'city') {
       if (this.timer) {
         clearTimeout(this.timer);

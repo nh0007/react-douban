@@ -91,7 +91,11 @@ export default class CityActivityDisplayItem extends Component {
         {this.activityList.length !== 0 ? (
           <CityActivityDisplayMain activityList={this.activityList} />
         ) : (
-          <Loading speed="1" primaryColor="#f6f5f2" />
+          <Loading
+            speed="1"
+            primaryColor="#f6f5f2"
+            style={{ marginBottom: '16px' }}
+          />
         )}
       </div>
     );
