@@ -15,7 +15,7 @@ export default class MovieTypeContent extends Component {
     movieStore: PropTypes.shape({
       movieTypes: PropTypes.array.isRequired,
       currentMovieType: PropTypes.object.isRequired,
-      currentTypeMovieList: PropTypes.arrayOf(PropTypes.object).isRequired,
+      currentTypeMovieList: PropTypes.array.isRequired,
       setCurrentMovieType: PropTypes.func.isRequired,
       setTypeMovies: PropTypes.func.isRequired
     }).isRequired
