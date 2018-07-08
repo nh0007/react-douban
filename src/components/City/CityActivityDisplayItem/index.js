@@ -44,6 +44,7 @@ export default class CityActivityDisplayItem extends Component {
         const data = response.data.events;
         this.activityList = data;
       } catch (error) {
+        this.activityList = null;
         console.log(error);
       }
     }.bind(this)
@@ -75,7 +76,7 @@ export default class CityActivityDisplayItem extends Component {
 
   lastCity = this.props.currentCity;
   @observable currentDayType = this.props.dayTypes[0];
-  @observable activityList = [];
+  @observable activityList = null;
 
   render() {
     const { currentActivityType, dayTypes } = this.props;
@@ -88,7 +89,7 @@ export default class CityActivityDisplayItem extends Component {
           handleClick={this.handleClick}
         />
 
-        {this.activityList.length !== 0 ? (
+        {this.activityList ? (
           <CityActivityDisplayMain activityList={this.activityList} />
         ) : (
           <Loading

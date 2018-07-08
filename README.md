@@ -78,10 +78,10 @@ yarn start
 音乐页：
 ![musicTagContent](https://github.com/nh0007/react-douban/blob/master/screenshot/musicTagContent.png)
 
-同城活动页
+同城活动页：
 ![cityActivity](https://github.com/nh0007/react-douban/blob/master/screenshot/cityActivity.png)
 
-搜索页
+搜索页：
 ![search](https://github.com/nh0007/react-douban/blob/master/screenshot/search.png)
 
 ## 结语
