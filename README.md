@@ -6,6 +6,10 @@
 
 React + Mobx + react-router + axios + Sass + ES6/7
 
+## 博文地址
+
+#### [基于React搭建一个简易版豆瓣](https://juejin.im/post/5b41b1be51882519790c6c12)
+
 ## 项目运行
 
 - 克隆项目
